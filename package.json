@@ -3,9 +3,23 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": { 
-    "start": "webpack-dev-server --mode development --open --hot", 
-    "build": "webpack --mode production" 
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open --hot",
+    "build": "webpack --mode production",
+    "tslint-check": "tslint --fix tslint.json 'src/**/*.tsx' 'src/**/*.ts'",
+    "prettier": "prettier --write src/**/*.tsx"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(ts|tsx)": [
+      "npm run tslint-check",
+      "npm run prettier",
+      "git add"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -13,7 +27,13 @@
   "devDependencies": {
     "awesome-typescript-loader": "^5.2.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "tslint": "^5.15.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-react": "^4.0.0",
     "typescript": "^3.4.3",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
