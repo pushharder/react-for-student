@@ -15,11 +15,13 @@
     }
   },
   "lint-staged": {
-    "*.(ts|tsx)": [
-      "npm run tslint-check",
-      "npm run prettier",
-      "git add"
-    ]
+    "linters": {
+      "*.{ts, tsx}": [
+        "npm run tslint-check",
+        "npm run prettier",
+        "git add"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
