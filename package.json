@@ -3,14 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "scripts": { 
+    "start": "webpack-dev-server --mode development --open --hot", 
+    "build": "webpack --mode production" 
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
     "tslint": "^5.15.0",
-    "typescript": "^3.4.3"
+    "typescript": "^3.4.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
